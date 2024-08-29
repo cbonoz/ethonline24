@@ -1,10 +1,12 @@
-import { RequestData } from './types';
+import { RequestData } from "./types"
 
-export const DEMO_REQUEST: RequestData  = {
-    recipientName: 'Alice',
-    recipientAddress: '0x123',
-    balance: 100,
-    name: 'Request',
-    description: 'This is a request',
-    files: ['file1', 'file2']
+export const DEFAULT_PLAYER_IMAGE = "/default_player_image.png"
+export const POSITIONS: string[] = ["QB", "RB", "WR", "TE", "FLEX"]
+
+export const EMPTY_DRAFT: Record<string, null> = {
+	QB: null,
+	RB: null,
+	WR: null,
+	TE: null,
+	FLEX: null,
 }

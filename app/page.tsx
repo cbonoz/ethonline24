@@ -1,9 +1,10 @@
 "use client"
 
-import { PlayerWheel } from "@/components/player-wheel"
+import PlayerDraft from "@/components/player-draft"
 import { RouteButtons } from "@/components/route-buttons"
 import { ACTIVE_PLAYERS_WITH_HEADSHOTS } from "@/lib/data/players"
-import { config } from "@/util/site-config"
+import { siteConfig } from "@/util/site-config"
+import { Route } from "lucide-react"
 import Image from "next/image"
 import { useState } from "react"
 import TinderCard from "react-tinder-card"
@@ -25,11 +26,11 @@ export default function Home() {
 			{/* <h1 className="text-4xl font-bold">Welcome to chaindraft</h1> */}
 			<div>
 				<img src="/logo.png" alt="chaindraft" className="my-4" />
-				<p className="text-lg pt-8">{config.description}.</p>
+				<p className="text-lg pt-8">{siteConfig.description}.</p>
 			</div>
 
 			<div>
-				<PlayerWheel />
+				<RouteButtons />
 			</div>
 		</main>
 	)

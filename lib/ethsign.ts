@@ -1,4 +1,3 @@
-import { config } from '@/util/site-config'
 import {
     SignProtocolClient,
     SpMode,

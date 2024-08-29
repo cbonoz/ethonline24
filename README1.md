@@ -5,17 +5,17 @@
 Chaindraft
 ---
 
-Fantasy football lineups with community driven pricing.
+A blockchain-based fantasy draft game with challenge-able player pages.
 
-Generate your dream lineup for offline contest or sportsbook using the app. Keep your lineup as a shareable url and minted nft proving you drafted a given roster and at what time.
+Generate your dream lineup for offline contest or sportsbook using the app. Keep your lineup as a shareable url and minted nft proving you drafted a given roster and at what time. Challenge other players
 
 ### Inspiration
 
 Pain points:
 
-- Traditional fantasy football platforms are centralized, leading to trust issues and lack of transparency.
+- Traditional fantasy football platforms are centralized, and often require large engineering teams to run.
 - There is often limited flexibility and customization in league settings and rules.
-- Transaction fees and delays can frustrate users, especially when dealing with payouts and rewards.
+- Transaction fees and delays can frustrate users, especially when dealing with withdraws and rewards. Example: many platforms require entering your SSN just to cash out!
 - Managing league data securely and transparently is a challenge with existing solutions.
 
 ### How Blockchain is Used
@@ -26,11 +26,13 @@ Pain points:
 
 ### Technologies Used
 
-- **Sign Protocol**: Facilitates secure and verifiable transactions within the fantasy football app. It ensures the integrity and non-repudiation of user actions and transactions, such as trades and lineup changes.
-- **Chiliz**: A blockchain-based fintech platform that allows fans to buy, trade, and execute voting rights in their favorite sports teams. In the context of BlockFantasy, Chiliz can be used for fan engagement and rewards, offering unique experiences and merchandise.
-- **Rootstock (RSK)**: A smart contract platform that is compatible with Ethereum but built on the Bitcoin blockchain. It provides security and allows BlockFantasy to leverage Bitcoin's robust infrastructure while implementing complex fantasy football smart contracts.
-- **Lit Protocol**: Used for secure and decentralized access control, ensuring that only authorized users can access specific features or data within the app. It can also be used for encrypting sensitive user information.
+- Web3Auth: Modal-based authentication. Main form of login for app.
+- **Sign Protocol**: Ensures the human verifiable claim that the roster was produced randomly
+- **Chiliz**: A blockchain-based fintech platform that allows fans to buy, trade, and execute voting rights in their favorite sports teams. In the context of BlockFantasy, Chiliz can be used for fan engagement and rewards, offering unique experiences and merchandise. Earn fan tokens for giving votes.
+- **Lit Protocol**: Used for secure and decentralized access control, ensuring that only authorized users can access specific features or data within the app. It can also be used for encrypting sensitive user information. - User Identity / Proof of humanity / KYC
+
 - **XMTP (Extensible Message Transport Protocol)**: Enables secure, decentralized messaging within the app. This can be used for communication between league members, announcements, and notifications about league activities.
+- **Tableland/Basin**: Upload new images via s3
 
 ### Challenges
 
@@ -52,4 +54,6 @@ These features and technologies will position BlockFantasy as a leading, innovat
 
 
 ### Useful links
-https://github.com/nflverse/nflverse-data/releases/tag/players
+* https://github.com/nflverse/nflverse-data/releases/tag/players
+* https://github.com/Web3Auth/web3auth-web
+* https://github.com/textileio/demo-basin-server

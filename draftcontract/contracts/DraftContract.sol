@@ -2,84 +2,36 @@
 pragma solidity ^0.8.19;
 
 contract DraftContract {
-    // Struct to represent a data entry
-    struct Metadata {
-        address owner;
-        string network;
-        uint createdAt;
-        string name;
-        string description;
-        uint256 balance;
-        string recipientName;
-        address recipientAddress;
-        string cid; // optional cid pointer to attachment/s
-        uint validatedAt;
-        string attestationId;
+    // Mapping from unique hash to JSON-encoded lineup
+    mapping(string => string) private lineups;
+    mapping(string => address) private lineupOwners;
+
+    // Event emitted when a lineup is saved
+    event LineupSaved(string indexed hash, string lineupJson);
+    event LineupChallenged(string indexed hash, address indexed challenger, address indexed challenged);
+
+    // Save a lineup associated with a unique hash
+    function saveLineup(string memory hash, string memory lineupJson) public {
+        require(bytes(hash).length > 0, "Hash cannot be empty");
+        require(bytes(lineupJson).length > 0, "Lineup JSON cannot be empty");
+
+        lineups[hash] = lineupJson;
+        lineupOwners[hash] = msg.sender;
+        emit LineupSaved(hash, lineupJson);
     }
 
-    // owner
-    address private owner;
-    // metadata
-    Metadata private metadata;
-
-    // Event to log balance verification
-    event DraftVerified(address verifier, uint256 balance, string attestationId);
-
-    constructor(
-        string memory _name,
-        string memory _description,
-        uint256 _balance,
-        string memory _recipientName,
-        address _recipientAddress,
-        string memory _cid,
-        string memory _network
-    ) {
-        // Constructor to initialize the contract
-        owner = msg.sender;
-        metadata = Metadata(
-            msg.sender,
-            _network,
-            block.timestamp,
-            _name,
-            _description,
-            _balance,
-            _recipientName,
-            _recipientAddress,
-            _cid,
-            0,
-            ""
-        );
+    // Fetch a lineup by its unique hash
+    function fetchLineup(string memory hash) public view returns (string memory) {
+        require(bytes(lineups[hash]).length > 0, "Lineup does not exist");
+        return lineups[hash];
     }
 
-    // get owner
-    function getOwner() public view returns (address) {
-        return owner;
+    // function challenge hash lineup
+    // emit a challenge event to the given lineup owner
+    function challengeLineup(string memory hash) public {
+        require(bytes(lineups[hash]).length > 0, "Lineup does not exist");
+        require(lineupOwners[hash] != msg.sender, "You cannot challenge your own lineup");
+        emit LineupChallenged(hash, msg.sender, lineupOwners[hash]);
     }
 
-    function validate(string memory _attestationId) public returns (Metadata memory) {
-        // verify address
-        // get balance of sender
-        uint256 balance = address(msg.sender).balance;
-        uint256 targetBalance = metadata.balance;
-        // only the recipient address can validate
-        require(
-            msg.sender == metadata.recipientAddress,
-            "Only the intended recipient can validate their balance"
-        );
-        // require at least balance of the metadata
-        require(balance >= targetBalance, "Balance is less than expected");
-        // only validate once
-        require(metadata.validatedAt == 0, "Balance already validated");
-        // set validatedAt timestamp
-        metadata.validatedAt = block.timestamp;
-        metadata.attestationId = _attestationId;
-        // emit event
-        emit DraftVerified(msg.sender, balance, _attestationId);
-        return metadata;
-    }
-
-    // get metadata
-    function getMetadata() public view returns (Metadata memory) {
-        return metadata;
-    }
 }

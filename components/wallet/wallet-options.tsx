@@ -1,49 +1,51 @@
-'use client'
+"use client"
 
-import * as React from 'react'
-import { Connector, useConnect } from 'wagmi'
-import { Button } from '../ui/button'
+import * as React from "react"
+import { Connector, useConnect } from "wagmi"
+import { Button } from "../ui/button"
+import { read } from "fs"
 
 export function WalletOptions() {
-    const { connectors, connect } = useConnect()
+	const { connectors, connect } = useConnect()
 
-    async function connectWallet({ connector }: any) {
-        console.log('connect', connector)
-        connect({ connector })
-    }
+	async function connectWallet({ connector }: any) {
+		console.log("connect", connector)
+		connect({ connector })
+	}
 
-    return connectors.map((connector) => (
-        <WalletOption
-            key={connector.uid}
-            connector={connector}
-            onClick={connectWallet.bind(null, { connector })}
-        />
-    ))
+	return connectors.map((connector) => (
+		<WalletOption
+			key={connector.uid}
+			connector={connector}
+			onClick={connectWallet.bind(null, { connector })}
+		/>
+	))
 }
 
 function WalletOption({
-    connector,
-    onClick,
+	connector,
+	onClick,
 }: {
-    connector: Connector
-    onClick: () => void
+	connector: Connector
+	onClick: () => void
 }) {
-    const [ready, setReady] = React.useState(false)
+	const [ready, setReady] = React.useState(false)
 
-    React.useEffect(() => {
-        ;(async () => {
-            const provider = await connector.getProvider()
-            setReady(!!provider)
-        })()
-    }, [connector])
+	React.useEffect(() => {
+		;(async () => {
+			const provider = await connector.getProvider()
+			setReady(!!provider)
+		})()
+	}, [connector])
 
-    return (
-        <button
-            className="underline text-blue-500 ml-4"
-            disabled={!ready}
-            onClick={onClick}
-        >
-            Login with {connector.name}
-        </button>
-    )
+	return (
+		<Button
+			variant={"secondary"}
+			disabled={!ready}
+			onClick={onClick}
+			className="ml-2"
+		>
+			Connect wallet
+		</Button>
+	)
 }
