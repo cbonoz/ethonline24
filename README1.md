@@ -7,7 +7,14 @@ Chaindraft
 
 A blockchain-based fantasy draft game with challenge-able player pages.
 
-Generate your dream lineup for offline contest or sportsbook using the app. Keep your lineup as a shareable url and minted nft proving you drafted a given roster and at what time. Challenge other players
+Generate your dream lineup for offline contest or sportsbook using the app with lineups tracked on smart contracts. Keep your lineup as a shareable url and minted nft proving you drafted a given roster and at what time. Challenge other players
+
+Track trending players
+
+Initiate 1:1 competitions with other draft makers.
+
+Chiliz for L1 deployment (public voting and trending players)
+Fhenix for L2 deployment (private voting and drafts)
 
 ### Inspiration
 

@@ -1,13 +1,15 @@
 "use client"
+import CreateContest from "@/components/create-contest"
 import PlayerDraft from "@/components/player-draft"
 
-const DraftPage = () => {
+const CreatePage = () => {
+	// Get cont:
 	return (
 		// container classes centered
 		<div className="flex flex-row justify-center mt-8">
-			<PlayerDraft />
+			<CreateContest />
 		</div>
 	)
 }
 
-export default DraftPage
+export default CreatePage

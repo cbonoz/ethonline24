@@ -17,7 +17,7 @@ export const RouteButtons = () => {
 
 			<Button
 				className="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded"
-				onClick={() => router.push("/challenge")}
+				onClick={() => router.push("/contest")}
 			>
 				Challenge
 			</Button>

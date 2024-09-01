@@ -4,7 +4,7 @@
 
 ## Chaindraft
 
-Mediated proof of fund requests managed by smart contracts with attestations of record backed by Sign Protocol.
+Mediated proof of fantasy contests managed by smart contracts with attestations of record backed by Sign Protocol.
 
 Built for <a href="https://ethglobal.com/events/scaling2024">Scaling Ethereum 2024</a>.
 
@@ -44,7 +44,7 @@ When the verification is complete, a blockchain event is also emitted with infor
 
 The attestation is created at time of fund verification and contains a hash of the user's signature. Every fund verification requires a successful attestation be created and this is currently created via the off chain sdk (Airweave).
 
-**Filecoin**: Used for secure file storage for additional material related to the fund request. When the other party visits the authenticated balance verification link, he or she can access the uploaded material related to the purpose of the upload. This is also secured with saturn and uses lighthouse web3 sdk underneath for both upload and download based on the cid. Created cids are saved to the smart contracts and are retrieved when the verification page is accessed. The cid is only revealed to the authorized parties (owner and recipient) for each smart contract / transaction.
+**Filecoin**: Used for secure file storage for additional material related to the fantasy contest. When the other party visits the authenticated balance verification link, he or she can access the uploaded material related to the purpose of the upload. This is also secured with saturn and uses lighthouse web3 sdk underneath for both upload and download based on the cid. Created cids are saved to the smart contracts and are retrieved when the verification page is accessed. The cid is only revealed to the authorized parties (owner and recipient) for each smart contract / transaction.
 
 <a href="https://gateway.lighthouse.storage/ipfs/QmeSUzMZSmUnj56WkriWwHjWqtJyarFX41EkPdscrQusuy">Example uploaded document</a>
 
@@ -123,7 +123,7 @@ Integration Complexity was the most challenging: Overcoming the technical challe
 
 ![About Schema](./img/about_schema.png)
 
-## Creating a new fund request
+## Creating a new fantasy contest
 
 ![Create](./img/create.png)
 
@@ -131,7 +131,7 @@ Integration Complexity was the most challenging: Overcoming the technical challe
 
 ![Created](./img/created.png)
 
-## Verifying a fund request
+## Verifying a fantasy contest
 
 ![Verify](./img/verify.png)
 

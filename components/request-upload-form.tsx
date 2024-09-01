@@ -160,7 +160,7 @@ function UploadForm() {
 							name="title"
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Enter fund request name</FormLabel>
+									<FormLabel>Enter fantasy contest name</FormLabel>
 									<FormControl>
 										<Input
 											placeholder={`.1 ${currency} team draft verification`}

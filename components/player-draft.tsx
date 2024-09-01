@@ -11,7 +11,11 @@ import classNames from "classnames"
 import { DEFAULT_PLAYER_IMAGE, EMPTY_DRAFT, POSITIONS } from "@/lib/constants"
 import { Progress } from "./ui/progress"
 
-const PlayerDraft = () => {
+interface Props {
+	contestId: string
+}
+
+const PlayerDraft = ({contestId}: Props) => {
 	const [draftedPlayers, setDraftedPlayers] =
 		useState<Record<string, Player | null>>(EMPTY_DRAFT)
 	const [skipsLeft, setSkipsLeft] = useState(siteConfig.maxDraftSkips)

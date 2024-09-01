@@ -5,22 +5,22 @@ export const siteConfig = {
 	isLocal: process.env.NEXT_PUBLIC_ENV === "development",
 	siteUrl: "https://vercel.chaindraft.com",
 	maxDraftSkips: 10,
-    numberDraftPlayers: 5,
+	numberDraftPlayers: 5,
 	about: [
 		{
 			title: "What is Chaindraft?",
 			description:
-				"Chaindraft is a decentralized fantasy football app that uses blockchain technology to provide a transparent and secure fantasy sports experience, featuring community-driven decisions on player salaries.",
+				"Chaindraft is a decentralized fantasy football app that leverages blockchain technology to offer a transparent and secure fantasy sports experience. It features community-driven decisions on player salaries and smart contract-based lineup management.",
 		},
 		{
 			title: "How does it work?",
 			description:
-				"Chaindraft allows users to vote on player salaries, with all votes securely recorded on the blockchain. Smart contracts manage and automate these salary decisions, ensuring fairness and transparency.",
+				"Chaindraft allows users to create contests and submit their fantasy football lineups. Smart contracts manage and automate contest entries, lineup submissions, and prize distributions. Each action is securely recorded on the blockchain to ensure fairness and transparency.",
 		},
 		{
 			title: "Why should I use Chaindraft?",
 			description:
-				"Chaindraft empowers users by allowing them to have a direct say in player salaries through community voting. This decentralized approach ensures that all financial transactions and game rules are transparent, secure, and verifiable.",
+				"Chaindraft empowers users with a direct influence on fantasy football contests through community voting on player salaries and contest outcomes. The decentralized nature of the platform ensures that all transactions and game rules are transparent, secure, and verifiable, providing an unparalleled gaming experience.",
 		},
 		{
 			title: "Disclaimer",
@@ -35,14 +35,19 @@ export const siteConfig = {
 				"Sign up and connect your digital wallet to participate. Secure your account and verify your identity using decentralized identity protocols.",
 		},
 		{
-			title: "Vote on Salaries",
+			title: "Join a Contest",
 			description:
-				"Participate in the community by voting on player salaries. Each vote is recorded on a smart contract, ensuring transparency and accountability.",
+				"Create or join a fantasy football contest. Set your entry fee, optional passcode, and other contest details. Manage your lineups based on community-determined player salaries.",
 		},
 		{
-			title: "Manage Your Team",
+			title: "Submit Your Lineup",
 			description:
-				"Build and manage your fantasy football team based on the community-determined salaries. Make strategic decisions to optimize your team’s performance throughout the season.",
+				"Submit your lineup of 5 players before the contest closes. Ensure your lineup meets the contest criteria and submit it before the deadline. The smart contract will handle all lineup validations and submissions.",
+		},
+		{
+			title: "Participate and Win",
+			description:
+				"Compete against other participants and track the results. The contest owner will declare the winner based on the contest rules. The prize pool will be distributed automatically via smart contract.",
 		},
 	],
 }
